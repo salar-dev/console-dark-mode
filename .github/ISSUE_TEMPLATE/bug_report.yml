@@ -1,0 +1,40 @@
+name: Theme problem
+description: Something looks wrong on Google Play Console or App Store Connect
+labels: [bug]
+body:
+  - type: dropdown
+    id: console
+    attributes:
+      label: Console
+      options:
+        - Google Play Console
+        - App Store Connect
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Page URL
+      description: The address of the page where it happens (remove any IDs you consider private).
+      placeholder: https://play.google.com/console/u/0/developers/.../app/.../statistics
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What looks wrong?
+      description: A screenshot helps a lot. Drag it into this box.
+    validations:
+      required: true
+  - type: input
+    id: chrome
+    attributes:
+      label: Chrome version
+      placeholder: e.g. 156.0.8078.4
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: Toggling dark mode off and on again (Alt+Shift+D) does not fix it
+        - label: It still happens after reloading the page
