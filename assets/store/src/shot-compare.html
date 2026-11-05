@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>screenshot: before / after</title>
+<link rel="stylesheet" href="promo.css">
+<style>
+  html, body { width: 1280px; height: 800px; }
+  .stage { position: relative; width: 1280px; height: 800px; overflow: hidden; background: #0d1017; }
+  .shot { position: absolute; inset: 0; width: 1280px; height: 800px; object-fit: cover; object-position: top left; }
+  /* Dark layer on top, kept left of a slanted seam running from (54%, 0) to (66%, 100%).
+     The seam line below uses exactly the same two points, so it sits on the cut. */
+  .shot.dark { clip-path: polygon(0 0, 54% 0, 66% 100%, 0 100%); }
+  .seam { position: absolute; inset: 0; width: 1280px; height: 800px; pointer-events: none; }
+  .label { position: absolute; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px;
+           font-size: 14px; font-weight: 650; letter-spacing: .04em; text-transform: uppercase; box-shadow: 0 6px 20px rgba(0,0,0,.35); }
+  .label.after { left: 12px; bottom: 24px; background: #151925; color: #eef1f7; border: 1px solid rgba(255,255,255,.14); }
+  .label.before { right: 26px; top: 62px; background: #fff; color: #202124; border: 1px solid rgba(0,0,0,.12); }
+  .label i { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+  .label.after i { background: #34d399; box-shadow: 0 0 8px rgba(52,211,153,.7); }
+  .label.before i { background: #fbbc04; }
+</style></head>
+<body>
+<div class="stage">
+  <img class="shot light" src="home-light@2x.png" alt="">
+  <img class="shot dark" src="home-dark@2x.png" alt="">
+  <svg class="seam" viewBox="0 0 1280 800" xmlns="http://www.w3.org/2000/svg">
+    <line x1="691.2" y1="0" x2="844.8" y2="800" stroke="rgba(0,0,0,0.35)" stroke-width="12"/>
+    <line x1="691.2" y1="0" x2="844.8" y2="800" stroke="#ffffff" stroke-width="4"/>
+  </svg>
+  <span class="label after"><i></i>After</span>
+  <span class="label before"><i></i>Before</span>
+</div>
+</body></html>

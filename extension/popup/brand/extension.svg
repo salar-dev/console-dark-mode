@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!--
+    Extension icon (48 px and up): a dark tile holding the two console icons
+    (Google Play Console behind, App Store Connect in front) under a crescent moon.
+  -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1d2232"/>
+      <stop offset="1" stop-color="#0a0c12"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.28" cy="0.2" r="0.75">
+      <stop offset="0" stop-color="#3b82f6" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e9edf2"/>
+    </linearGradient>
+    <!-- userSpaceOnUse: a bounding-box gradient vanishes on the horizontal (zero-height) stroke -->
+    <linearGradient id="blue" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="512">
+      <stop offset="0" stop-color="#2eb1ff"/>
+      <stop offset="1" stop-color="#0a7dff"/>
+    </linearGradient>
+    <linearGradient id="moon" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff6dc"/>
+      <stop offset="1" stop-color="#f3cf7a"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="14"/>
+      <feOffset dy="12" result="b"/>
+      <feComponentTransfer in="b" result="s"><feFuncA type="linear" slope="0.55"/></feComponentTransfer>
+      <feMerge><feMergeNode in="s"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="moonglow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+    <mask id="crescent">
+      <rect width="512" height="512" fill="#000"/>
+      <circle cx="404" cy="112" r="54" fill="#fff"/>
+      <circle cx="428" cy="92" r="46" fill="#000"/>
+    </mask>
+    <clipPath id="tileclip"><rect width="512" height="512" rx="116"/></clipPath>
+  </defs>
+
+  <!-- dark tile -->
+  <rect width="512" height="512" rx="116" fill="url(#bg)"/>
+  <rect width="512" height="512" rx="116" fill="url(#glow)"/>
+  <rect x="1.5" y="1.5" width="509" height="509" rx="114.5" fill="none" stroke="#ffffff" stroke-opacity="0.09" stroke-width="3"/>
+
+  <!-- moon -->
+  <g clip-path="url(#tileclip)">
+    <circle cx="404" cy="112" r="54" fill="#f3cf7a" opacity="0.35" filter="url(#moonglow)"/>
+    <rect width="512" height="512" fill="url(#moon)" mask="url(#crescent)"/>
+  </g>
+
+  <!-- Google Play Console (back) -->
+  <g transform="translate(66 150)" filter="url(#shadow)">
+    <rect width="232" height="232" rx="52" fill="url(#tile)"/>
+    <g transform="translate(46.7 47.6) scale(4.03)">
+      <path fill="#2F80ED" d="M4 29.453V4.548C4 1.82 6.987.115 9.378 1.48l21.83 12.452c2.39 1.364 2.39 4.772 0 6.135L9.378 32.52C6.988 33.884 4 32.18 4 29.453z"/>
+      <path fill="#CCF6FF" d="M25.857 10.88l-11.47 6.605-2.19-3.88a1.874 1.874 0 00-1.138-.888 1.9 1.9 0 00-1.439.17L4 16.007v3.826l5.976-3.319 2.2 3.9c.246.435.666.76 1.152.892a1.922 1.922 0 001.452-.187L29.224 12.8l-3.367-1.92z"/>
+    </g>
+  </g>
+
+  <!-- App Store Connect (front) -->
+  <g transform="translate(214 214)" filter="url(#shadow)">
+    <rect width="232" height="232" rx="52" fill="url(#tile)"/>
+    <g transform="scale(0.453125)">
+      <rect x="37.5" y="37.5" width="437" height="437" rx="96" fill="none" stroke="url(#blue)" stroke-width="19"/>
+      <g fill="none" stroke="url(#blue)" stroke-width="45" stroke-linecap="round">
+        <line x1="97.5" y1="316.5" x2="414.5" y2="316.5"/>
+        <line x1="138" y1="392" x2="275" y2="118"/>
+        <line x1="374" y1="392" x2="237" y2="118"/>
+      </g>
+    </g>
+  </g>
+</svg>

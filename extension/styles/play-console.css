@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Dark theme — Google Play Console (play.google.com/console)
+
+   Scoped to html[data-store-dark="playconsole"], which the content script
+   adds together with Google's own `acx-dark-theme` class. That class flips
+   the console's Material tokens to their dark values; the dynamic engine
+   recolours hard-coded leftovers. This file covers what neither can reach:
+   the cross-origin One Google bar, the splash screen, scrollbars, and a few
+   polish items.
+   ========================================================================== */
+
+html[data-store-dark="playconsole"] {
+  color-scheme: dark;
+
+  --sd-bg:        #131314;
+  --sd-surface:   #1e1f20;
+  --sd-surface-2: #282a2c;
+  --sd-surface-3: #333537;
+  --sd-border:    #444746;
+  --sd-text:      #e3e3e3;
+  --sd-text-2:    #c4c7c5;
+  --sd-text-3:    #8e918f;
+  --sd-primary:   #a8c7fa;
+  --sd-error:     #f2b8b5;
+}
+
+/* ---- Canvas ------------------------------------------------------------ */
+html[data-store-dark="playconsole"],
+html[data-store-dark="playconsole"] body {
+  background-color: var(--sd-bg) !important;
+  color: var(--sd-text);
+}
+
+/* Splash shown before the Angular app boots (white by default → flash). */
+html[data-store-dark="playconsole"] [id^="console-splash"] {
+  background-color: var(--sd-bg) !important;
+}
+html[data-store-dark="playconsole"] [id^="console-splash"] .console-logo,
+html[data-store-dark="playconsole"] [id^="console-splash"] .loading-message {
+  color: var(--sd-text) !important;
+  fill: var(--sd-text) !important;
+}
+
+/* ---- One Google bar (#gb) — stylesheet is cross-origin, so done by hand -- */
+html[data-store-dark="playconsole"] #gb {
+  color: var(--sd-text) !important;
+  background-color: transparent !important;
+}
+html[data-store-dark="playconsole"] #gb a,
+html[data-store-dark="playconsole"] #gb [role="button"] {
+  color: var(--sd-text) !important;
+}
+html[data-store-dark="playconsole"] #gb svg {
+  fill: var(--sd-text-2) !important;
+}
+/* Account / apps flyouts rendered by the One Google bar */
+html[data-store-dark="playconsole"] #gb [role="dialog"],
+html[data-store-dark="playconsole"] #gb [role="menu"],
+html[data-store-dark="playconsole"] #gb iframe {
+  color-scheme: dark;
+}
+
+/* ---- Table horizontal scroll indicator (styled from a cross-origin sheet) */
+html[data-store-dark="playconsole"] .particle-hscroll-inner {
+  background-color: #444746 !important;
+}
+html[data-store-dark="playconsole"] .particle-hscroll-thumb {
+  background-color: #8e918f !important;
+}
+
+/* ---- Credit link in the footer ------------------------------------------ */
+html[data-store-dark="playconsole"] [data-store-dark-badge] {
+  white-space: nowrap;
+  opacity: 0.85;
+}
+html[data-store-dark="playconsole"] [data-store-dark-badge]:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* ---- Scrollbars -------------------------------------------------------- */
+html[data-store-dark="playconsole"] ::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+html[data-store-dark="playconsole"] ::-webkit-scrollbar-track {
+  background: transparent;
+}
+html[data-store-dark="playconsole"] ::-webkit-scrollbar-thumb {
+  background-color: #4a4d52;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  border-radius: 8px;
+}
+html[data-store-dark="playconsole"] ::-webkit-scrollbar-thumb:hover {
+  background-color: #5f6368;
+}
+
+/* ---- Selection & focus -------------------------------------------------- */
+html[data-store-dark="playconsole"] ::selection {
+  background-color: rgba(168, 199, 250, 0.35);
+}
+
+/* ---- Media stays untouched (the engine never filters images) ----------- */
+html[data-store-dark="playconsole"] img,
+html[data-store-dark="playconsole"] video,
+html[data-store-dark="playconsole"] canvas {
+  color-scheme: light; /* keep transparent PNG/SVG icons rendering as designed */
+}

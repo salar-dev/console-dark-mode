@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="App Store Connect">
+  <!-- App Store Connect icon: white tile, blue rounded frame, the three-stroke "A". -->
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#eef1f5"/>
+    </linearGradient>
+    <!-- userSpaceOnUse: a bounding-box gradient vanishes on the horizontal (zero-height) stroke -->
+    <linearGradient id="blue" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="512">
+      <stop offset="0" stop-color="#2eb1ff"/>
+      <stop offset="1" stop-color="#0a7dff"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="115" fill="url(#tile)"/>
+  <rect x="37.5" y="37.5" width="437" height="437" rx="96" fill="none" stroke="url(#blue)" stroke-width="19"/>
+  <g fill="none" stroke="url(#blue)" stroke-width="45" stroke-linecap="round">
+    <line x1="97.5" y1="316.5" x2="414.5" y2="316.5"/>
+    <line x1="138" y1="392" x2="275" y2="118"/>
+    <line x1="374" y1="392" x2="237" y2="118"/>
+  </g>
+</svg>

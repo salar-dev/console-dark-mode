@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Google Play Console">
+  <!-- Google Play Console product mark (blue play triangle with the light check band) on its white tile. -->
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#eef1f5"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="115" fill="url(#tile)"/>
+  <g transform="translate(103 105) scale(8.9)">
+    <path fill="#2F80ED" d="M4 29.453V4.548C4 1.82 6.987.115 9.378 1.48l21.83 12.452c2.39 1.364 2.39 4.772 0 6.135L9.378 32.52C6.988 33.884 4 32.18 4 29.453z"/>
+    <path fill="#CCF6FF" d="M25.857 10.88l-11.47 6.605-2.19-3.88a1.874 1.874 0 00-1.138-.888 1.9 1.9 0 00-1.439.17L4 16.007v3.826l5.976-3.319 2.2 3.9c.246.435.666.76 1.152.892a1.922 1.922 0 001.452-.187L29.224 12.8l-3.367-1.92z"/>
+  </g>
+</svg>

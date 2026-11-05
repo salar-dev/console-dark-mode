@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en" data-store-url="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Console Dark Mode — dark theme for Google Play Console &amp; App Store Connect</title>
+  <meta name="description" content="A carefully crafted dark theme for Google Play Console and App Store Connect. One switch per console, no white flash, no data collected. Free and open source Chrome extension.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0d1017">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/icon-128.png" sizes="128x128" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="canonical" href="https://salar-dev.github.io/console-dark-mode/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Console Dark Mode">
+  <meta property="og:title" content="Console Dark Mode — your developer consoles, finally dark">
+  <meta property="og:description" content="A carefully crafted dark theme for Google Play Console and App Store Connect. One switch per console, no white flash, no data collected.">
+  <meta property="og:url" content="https://salar-dev.github.io/console-dark-mode/">
+  <meta property="og:image" content="https://salar-dev.github.io/console-dark-mode/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip" href="#features">Skip to content</a>
+
+<header class="nav">
+  <div class="container nav__inner">
+    <a class="brand" href="#top" aria-label="Console Dark Mode, home">
+      <img src="assets/icon.svg" width="32" height="32" alt="">
+      <span>Console Dark Mode</span>
+    </a>
+    <nav class="nav__links" aria-label="Sections">
+      <a href="#features">Features</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav__actions">
+      <a class="icon-link" href="https://github.com/salar-dev/console-dark-mode" target="_blank" rel="noopener" aria-label="GitHub repository">
+        <svg viewBox="0 0 16 16" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M8 .2a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38v-1.49c-2.23.48-2.7-.95-2.7-.95-.36-.92-.89-1.17-.89-1.17-.72-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.71 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.03 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 8 .2z"/></svg>
+      </a>
+      <a class="btn btn--primary btn--sm js-store" href="#install">Add to Chrome</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <h1>Your developer consoles,<br><em>finally dark.</em></h1>
+        <p class="lead">A carefully crafted dark theme for <strong>Google Play Console</strong> and <strong>App Store Connect</strong>. Colours are remapped from the consoles' own stylesheets, so every table, chart and dialog stays readable. Nothing else on the web is touched.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary js-store" href="#install">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/><path d="M12 8.5h8.2M6.6 15.6l4.1-7.1M13.3 15.5l-4.1 7"/></svg>
+            Add to Chrome
+          </a>
+          <a class="btn btn--ghost" href="https://github.com/salar-dev/console-dark-mode" target="_blank" rel="noopener">View on GitHub</a>
+        </div>
+        <ul class="hero__meta" aria-label="Highlights">
+          <li>No data collected</li>
+          <li>No white flash</li>
+          <li><kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd> to toggle</li>
+        </ul>
+      </div>
+      <figure class="hero__visual">
+        <div class="browser">
+          <div class="browser__bar" aria-hidden="true">
+            <span class="browser__dots"><i></i><i></i><i></i></span>
+            <span class="browser__url">play.google.com/console</span>
+            <img class="browser__ext" src="assets/icon.svg" width="18" height="18" alt="">
+          </div>
+          <img src="assets/before-after.webp" width="1280" height="800" alt="Google Play Console home page, light on the right and dark on the left" fetchpriority="high">
+        </div>
+        <figcaption>The same page before and after. The split is the only edit.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Supported consoles -->
+  <section class="consoles" aria-labelledby="consoles-title">
+    <div class="container">
+      <h2 id="consoles-title" class="visually-hidden">Supported consoles</h2>
+      <div class="consoles__grid">
+        <div class="console-card">
+          <img src="assets/play-console.svg" width="48" height="48" alt="">
+          <div>
+            <h3>Google Play Console</h3>
+            <p>play.google.com/console</p>
+          </div>
+          <span class="check" aria-label="Supported">✓</span>
+        </div>
+        <div class="console-card">
+          <img src="assets/app-store-connect.svg" width="48" height="48" alt="">
+          <div>
+            <h3>App Store Connect</h3>
+            <p>appstoreconnect.apple.com</p>
+          </div>
+          <span class="check" aria-label="Supported">✓</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="section">
+    <div class="container">
+      <header class="section__head">
+        <p class="kicker">Features</p>
+        <h2>Dark done properly, not inverted.</h2>
+        <p>Most "dark mode" extensions flip every pixel. This one reads the consoles' stylesheets and builds a matching dark palette, so it looks like the theme Google and Apple forgot to ship.</p>
+      </header>
+      <div class="features">
+        <article class="feature">
+          <span class="feature__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-.5 0-.9-.1-1.4A6 6 0 0 1 13.4 3.1 9 9 0 0 0 12 3z"/></svg></span>
+          <h3>A real dark theme</h3>
+          <p>Colours are remapped from the live CSS, keeping brand accents, status chips, charts and illustrations exactly where they belong.</p>
+        </article>
+        <article class="feature">
+          <span class="feature__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg></span>
+          <h3>No white flash</h3>
+          <p>The theme is in place before the first paint: cold reloads, statistics, financial reports and App Analytics open dark from the first frame.</p>
+        </article>
+        <article class="feature">
+          <span class="feature__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="5"/><circle cx="15" cy="12" r="3" fill="var(--bg)"/></svg></span>
+          <h3>One switch per console</h3>
+          <p>Turn Play Console or App Store Connect off independently, or everything at once, from the toolbar popup.</p>
+        </article>
+        <article class="feature">
+          <span class="feature__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M6 9h2M10 9h2M14 9h2M18 9h0M6 13h2M10 13h4M16 13h2" stroke="var(--bg)" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+          <h3>Keyboard shortcut</h3>
+          <p><kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd> toggles dark mode on the current console and restores the page instantly. Change it in Chrome's shortcut settings.</p>
+        </article>
+        <article class="feature">
+          <span class="feature__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z"/></svg></span>
+          <h3>Follows your system</h3>
+          <p>Optionally go dark only while macOS or Windows is in dark mode. Your choices sync with your Chrome profile.</p>
+        </article>
+        <article class="feature">
+          <span class="feature__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.3 8 11 4.6-1.7 8-6 8-11V5l-8-3z"/><path d="m9.5 12 1.8 1.8L15 10" fill="none" stroke="var(--bg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <h3>Stays in its lane</h3>
+          <p>Runs only on play.google.com/console and appstoreconnect.apple.com. No other site is matched, read or changed. Ever.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots -->
+  <section id="screenshots" class="section section--alt">
+    <div class="container">
+      <header class="section__head">
+        <p class="kicker">Screenshots</p>
+        <h2>Every corner of the console.</h2>
+        <p>Dashboards, app lists, version pages and the popup. Click any image to enlarge.</p>
+      </header>
+      <div class="shots">
+        <button class="shot shot--wide" type="button" data-full="assets/before-after.webp" data-alt="Google Play Console home, before and after">
+          <img src="assets/before-after.webp" width="1280" height="800" alt="Google Play Console home, before and after" loading="lazy">
+          <span>Before / after on the same page</span>
+        </button>
+        <button class="shot" type="button" data-full="assets/play-console-dashboard.webp" data-alt="Google Play Console app dashboard in dark mode">
+          <img src="assets/play-console-dashboard.webp" width="1280" height="800" alt="Google Play Console app dashboard in dark mode" loading="lazy">
+          <span>Play Console · app dashboard</span>
+        </button>
+        <button class="shot" type="button" data-full="assets/app-store-connect-apps.webp" data-alt="App Store Connect apps list in dark mode">
+          <img src="assets/app-store-connect-apps.webp" width="1280" height="800" alt="App Store Connect apps list in dark mode" loading="lazy">
+          <span>App Store Connect · apps</span>
+        </button>
+        <button class="shot" type="button" data-full="assets/play-console-home.webp" data-alt="Google Play Console home in dark mode">
+          <img src="assets/play-console-home.webp" width="1280" height="800" alt="Google Play Console home in dark mode" loading="lazy">
+          <span>Play Console · home</span>
+        </button>
+        <button class="shot" type="button" data-full="assets/app-store-connect-app.webp" data-alt="App Store Connect app version page in dark mode">
+          <img src="assets/app-store-connect-app.webp" width="1280" height="800" alt="App Store Connect app version page in dark mode" loading="lazy">
+          <span>App Store Connect · version page</span>
+        </button>
+      </div>
+      <p class="note">Screenshots show fictional apps and numbers; the interface is the real thing.</p>
+    </div>
+  </section>
+
+  <!-- Popup -->
+  <section class="section popup-section" aria-labelledby="popup-title">
+    <div class="container popup-section__grid">
+      <div>
+        <p class="kicker">The popup</p>
+        <h2 id="popup-title">Everything in one small panel.</h2>
+        <ul class="checklist">
+          <li><strong>Status at a glance.</strong> See whether the current tab is themed, waiting for system dark mode, or not a console at all.</li>
+          <li><strong>Per-console switches.</strong> Play Console and App Store Connect each get their own toggle; the big switch controls both.</li>
+          <li><strong>Follow system appearance.</strong> Dark only while your OS is dark.</li>
+          <li><strong>Shortcut in sight.</strong> The current key combination, with a one-click link to change it.</li>
+        </ul>
+      </div>
+      <figure class="popup-figure">
+        <img src="assets/popup-ui.webp" width="1008" height="1200" alt="The extension popup: a master switch, a status line, switches for Google Play Console and App Store Connect, and a follow-system option" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <section id="privacy" class="section section--alt">
+    <div class="container">
+      <div class="privacy-card">
+        <div>
+          <p class="kicker">Privacy</p>
+          <h2>Nothing leaves your browser.</h2>
+          <p>There is no analytics, no remote code, no third-party script and no network request of any kind. The extension needs two permissions: <code>storage</code>, to remember your three toggles, and access to the two console domains, to apply the theme.</p>
+          <a class="link-arrow" href="privacy.html">Read the privacy policy</a>
+        </div>
+        <ul class="privacy-facts" aria-label="Privacy facts">
+          <li><span>0</span>data collected</li>
+          <li><span>0</span>network requests</li>
+          <li><span>2</span>sites touched</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Install -->
+  <section id="install" class="section">
+    <div class="container">
+      <header class="section__head">
+        <p class="kicker">Install</p>
+        <h2>Two ways to get it.</h2>
+      </header>
+      <div class="install">
+        <article class="install__card install__card--store">
+          <h3>Chrome Web Store</h3>
+          <p class="js-store-copy">The listing is on its way. This button will light up the moment it is live.</p>
+          <a class="btn btn--primary js-store" href="#install">Add to Chrome</a>
+        </article>
+        <article class="install__card">
+          <h3>From source</h3>
+          <ol>
+            <li>Download or clone the <a href="https://github.com/salar-dev/console-dark-mode" target="_blank" rel="noopener">repository</a>.</li>
+            <li>Open <code>chrome://extensions</code> and switch on <em>Developer mode</em>.</li>
+            <li>Choose <em>Load unpacked</em> and pick the <code>extension</code> folder.</li>
+          </ol>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section section--alt">
+    <div class="container container--narrow">
+      <header class="section__head">
+        <p class="kicker">FAQ</p>
+        <h2>Questions, answered.</h2>
+      </header>
+      <details>
+        <summary>Does it darken the public Google Play Store or the App Store?</summary>
+        <p>No. It only runs on the two developer consoles: play.google.com/console and appstoreconnect.apple.com. The public stores, Google Search, Gmail and everything else are left exactly as they are.</p>
+      </details>
+      <details>
+        <summary>Will it break when Google or Apple redesign their console?</summary>
+        <p>The dark palette is generated from the consoles' live stylesheets rather than hard-coded, so most changes are absorbed automatically. If something looks off after an update, open an issue on GitHub with a screenshot and the page URL.</p>
+      </details>
+      <details>
+        <summary>Does it slow the console down?</summary>
+        <p>No. It is a stylesheet injected before the first paint plus a small script that keeps the theme in sync with the page. There are no network requests.</p>
+      </details>
+      <details>
+        <summary>Can I keep one console light and the other dark?</summary>
+        <p>Yes. Each console has its own switch in the popup. The keyboard shortcut toggles the console you are currently on.</p>
+      </details>
+      <details>
+        <summary>Is this an official Google or Apple product?</summary>
+        <p>No. Console Dark Mode is an independent, open-source project by Salar Dev and is not affiliated with or endorsed by Google or Apple.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section cta-final">
+    <div class="container">
+      <img src="assets/icon.svg" width="72" height="72" alt="">
+      <h2>Make your consoles comfortable.</h2>
+      <p>Free, open source, and out of your way.</p>
+      <div class="hero__cta hero__cta--center">
+        <a class="btn btn--primary js-store" href="#install">Add to Chrome</a>
+        <a class="btn btn--ghost" href="https://github.com/salar-dev/console-dark-mode" target="_blank" rel="noopener">Star on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <p>© <span id="year">2026</span> <a href="https://github.com/salar-dev" target="_blank" rel="noopener">Salar Dev</a> · MIT License</p>
+    <nav aria-label="Footer">
+      <a href="https://github.com/salar-dev/console-dark-mode" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/salar-dev/console-dark-mode/issues" target="_blank" rel="noopener">Report an issue</a>
+      <a href="privacy.html">Privacy policy</a>
+    </nav>
+    <p class="footer__legal">Google Play and the Google Play logo are trademarks of Google LLC. App Store Connect is a trademark of Apple Inc. This project is not affiliated with or endorsed by Google or Apple.</p>
+  </div>
+</footer>
+
+<dialog id="lightbox" class="lightbox" aria-label="Enlarged screenshot">
+  <button class="lightbox__close" type="button" aria-label="Close">×</button>
+  <img src="" alt="">
+</dialog>
+
+<script src="main.js"></script>
+</body>
+</html>

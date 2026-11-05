@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!--
+    Toolbar sizes (16 / 32 px): same idea as extension-icon.svg with the fine
+    details dropped: no moon, no shadows, larger tiles, bolder strokes.
+  -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f2436"/>
+      <stop offset="1" stop-color="#0a0c12"/>
+    </linearGradient>
+    <!-- userSpaceOnUse: a bounding-box gradient vanishes on the horizontal (zero-height) stroke -->
+    <linearGradient id="blue" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="512">
+      <stop offset="0" stop-color="#2eb1ff"/>
+      <stop offset="1" stop-color="#0a7dff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <rect x="4" y="4" width="504" height="504" rx="108" fill="none" stroke="#ffffff" stroke-opacity="0.14" stroke-width="8"/>
+
+  <!-- Google Play Console (back) -->
+  <g transform="translate(40 40)">
+    <rect width="272" height="272" rx="60" fill="#ffffff"/>
+    <g transform="translate(48 50) scale(5.0)">
+      <path fill="#2F80ED" d="M4 29.453V4.548C4 1.82 6.987.115 9.378 1.48l21.83 12.452c2.39 1.364 2.39 4.772 0 6.135L9.378 32.52C6.988 33.884 4 32.18 4 29.453z"/>
+      <path fill="#CCF6FF" d="M25.857 10.88l-11.47 6.605-2.19-3.88a1.874 1.874 0 00-1.138-.888 1.9 1.9 0 00-1.439.17L4 16.007v3.826l5.976-3.319 2.2 3.9c.246.435.666.76 1.152.892a1.922 1.922 0 001.452-.187L29.224 12.8l-3.367-1.92z"/>
+    </g>
+  </g>
+
+  <!-- App Store Connect (front) -->
+  <g transform="translate(200 200)">
+    <rect x="-10" y="-10" width="292" height="292" rx="68" fill="#0a0c12"/>
+    <rect width="272" height="272" rx="60" fill="#ffffff"/>
+    <g transform="scale(0.53125)">
+      <rect x="40" y="40" width="432" height="432" rx="96" fill="none" stroke="url(#blue)" stroke-width="30"/>
+      <g fill="none" stroke="url(#blue)" stroke-width="60" stroke-linecap="round">
+        <line x1="105" y1="316.5" x2="407" y2="316.5"/>
+        <line x1="145" y1="392" x2="275" y2="128"/>
+        <line x1="367" y1="392" x2="237" y2="128"/>
+      </g>
+    </g>
+  </g>
+</svg>

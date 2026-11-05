@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="require-trusted-types-for 'script'; trusted-types 'none'">
+<title>Store Dark e2e fixture</title>
+<link rel="stylesheet" href="external.css">
+<style>
+  body { margin: 0; font-family: sans-serif; background: #f8fafd; color: #1f1f1f; }
+  .card { background: #fff; color: #111; border: 1px solid #d6d6d6; padding: 12px; margin: 12px; box-shadow: 0 1px 2px rgba(60,64,67,.3); }
+  .link { color: #0070c9; }
+  .accent { background: #0b57d0; color: #fff; padding: 6px; }
+  .tonal { background: #c2e7ff; color: #004a77; padding: 6px; }
+  @media (min-width: 100px) { .media-card { background: #f0f4f9; } }
+  .inline-keep { padding: 6px; }
+</style>
+</head>
+<body>
+  <a class="navigation-menu-logo" href="#"><img id="logo-img" src="logo.svg" alt="Logo" width="200" height="64"></a>
+  <div class="image-container"><img id="illu-img" class="image" src="/console/test/play.console.ui.common.images/getting_started/sample.svg" alt="" width="140" height="140"></div>
+  <div class="card" id="card">card</div>
+  <a class="link" id="link" href="#">link</a>
+  <div class="accent" id="accent">accent</div>
+  <div class="tonal" id="tonal">tonal</div>
+  <div class="media-card" id="media">media</div>
+  <div class="ext" id="ext">external css</div>
+  <div class="inline-keep" id="inline" style="background: rgb(1, 200, 3)">inline stays</div>
+  <div id="runtime" class="rt-box">runtime insertRule</div>
+  <div id="late" class="late-box">late insertRule, read immediately</div>
+  <div id="inline-white" style="background-color: rgb(255, 255, 255); color: rgb(17, 17, 17); border-bottom: 1px solid rgb(216, 216, 216);">inline white bar</div>
+  <div id="inline-late">inline set by script later</div>
+  <svg id="glyph-grey" fill="#333" width="20" height="20" viewBox="0 0 20 20"><path d="M2 2h16v16H2z"/></svg>
+  <svg id="glyph-color" fill="#0070c9" width="20" height="20" viewBox="0 0 20 20"><path d="M2 2h16v16H2z"/></svg>
+  <my-widget id="widget"></my-widget>
+  <div class="footer-row primary" id="footer"><a class="footer-item grey-link" href="#">Help</a></div>
+  <pre id="report"></pre>
+  <script>
+    // Shadow root with its own light styles and a light/dark class on an inner element
+    const host = document.getElementById('widget');
+    const sr = host.attachShadow({ mode: 'open' });
+    // Built without innerHTML: the fixture enforces Trusted Types like Play Console does.
+    const st = document.createElement('style');
+    st.textContent = '.inner{background:#f1f1f1;color:#333;padding:6px}';
+    const inner = document.createElement('div');
+    inner.className = 'inner light';
+    inner.id = 'inner';
+    inner.textContent = 'shadow inner';
+    sr.append(st, inner);
+    // styled-components style runtime insertion into an existing sheet
+    setTimeout(() => {
+      const sheet = document.styleSheets[1];
+      sheet.insertRule('.rt-box { background: rgb(255, 255, 255); color: rgb(51, 51, 51); }', sheet.cssRules.length);
+    }, 300);
+    setTimeout(async () => {
+      // No DOM mutation here: only the page-world hook can report this in time.
+      const sheet = document.styleSheets[1];
+      sheet.insertRule('.late-box { background: rgb(255, 255, 255); }', sheet.cssRules.length);
+      await Promise.resolve();
+      await Promise.resolve();
+      window.__lateImmediate = getComputedStyle(document.getElementById('late')).backgroundColor;
+    }, 700);
+    setTimeout(() => {
+      const el = document.getElementById('inline-late');
+      el.style.backgroundColor = 'rgb(255, 255, 255)';
+      el.style.backdropFilter = 'blur(20px)';
+    }, 500);
+    setTimeout(() => {
+      const g = (el) => getComputedStyle(el);
+      const r = {
+        attr: document.documentElement.getAttribute('data-store-dark'),
+        htmlClass: document.documentElement.className,
+        bodyBg: g(document.body).backgroundColor,
+        card: g(document.getElementById('card')).backgroundColor + ' / ' + g(document.getElementById('card')).color + ' / ' + g(document.getElementById('card')).borderTopColor,
+        link: g(document.getElementById('link')).color,
+        accent: g(document.getElementById('accent')).backgroundColor,
+        tonal: g(document.getElementById('tonal')).backgroundColor + ' / ' + g(document.getElementById('tonal')).color,
+        media: g(document.getElementById('media')).backgroundColor,
+        ext: g(document.getElementById('ext')).backgroundColor + ' / ' + g(document.getElementById('ext')).color,
+        inline: g(document.getElementById('inline')).backgroundColor,
+        runtime: g(document.getElementById('runtime')).backgroundColor + ' / ' + g(document.getElementById('runtime')).color,
+        shadow: g(sr.getElementById('inner')).backgroundColor + ' / ' + g(sr.getElementById('inner')).color,
+        inlineWhite: g(document.getElementById('inline-white')).backgroundColor + ' / ' + g(document.getElementById('inline-white')).color + ' / ' + g(document.getElementById('inline-white')).borderBottomColor,
+        inlineLate: g(document.getElementById('inline-late')).backgroundColor,
+        lateImmediate: window.__lateImmediate || 'unset',
+        badgeCount: document.querySelectorAll('#footer > [data-store-dark-badge]').length,
+        logoSrc: (() => { const s = document.getElementById('logo-img').getAttribute('src') || ''; return s.startsWith('data:image/svg+xml') ? decodeURIComponent(s.slice(s.indexOf(',') + 1)) : s; })(),
+        logoLoaded: document.getElementById('logo-img').naturalWidth > 0,
+        illuSrc: (() => { const s = document.getElementById('illu-img').getAttribute('src') || ''; return s.startsWith('data:image/svg+xml') ? decodeURIComponent(s.slice(s.indexOf(',') + 1)) : s; })(),
+        illuLoaded: document.getElementById('illu-img').naturalWidth > 0,
+        illuOpacity: g(document.getElementById('illu-img')).opacity,
+        badgeHref: (document.querySelector('[data-store-dark-badge]') || {}).href || '',
+        badgeText: (document.querySelector('[data-store-dark-badge]') || {}).textContent || '',
+        glyphGrey: g(document.querySelector('#glyph-grey path')).fill,
+        glyphColor: g(document.querySelector('#glyph-color path')).fill,
+        adopted: document.adoptedStyleSheets.length,
+        shadowAdopted: sr.adoptedStyleSheets.length,
+        engineStyleEls: document.querySelectorAll('style[data-store-dark-engine]').length
+      };
+      document.getElementById('report').textContent = 'REPORT ' + JSON.stringify(r);
+    }, 1800);
+  </script>
+</body>
+</html>

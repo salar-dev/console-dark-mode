@@ -1,0 +1,33 @@
+/* Shared styling for the promo tiles (rendered by scripts/store/shot.mjs). */
+:root {
+  --bg: #0d1017; --bg-2: #151a26; --text: #eef1f7; --text-2: #a7aebc; --text-3: #6f7788;
+  --accent: #3b82f6; --accent-2: #60a5fa; --moon: #f6dd9d;
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; overflow: hidden; background: var(--bg); color: var(--text); font-family: var(--font); -webkit-font-smoothing: antialiased; }
+.tile {
+  position: relative; display: flex; align-items: center; overflow: hidden; isolation: isolate;
+  background: linear-gradient(135deg, #121725 0%, #0d1017 55%, #0a0c12 100%);
+}
+.tile::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    radial-gradient(42% 60% at 22% 50%, rgba(59, 130, 246, 0.28), transparent 70%),
+    radial-gradient(30% 45% at 85% 15%, rgba(246, 221, 157, 0.10), transparent 70%);
+}
+.tile::after { /* faint grid for texture */
+  content: ""; position: absolute; inset: 0; z-index: -1; opacity: 0.35;
+  background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(70% 80% at 30% 50%, #000, transparent);
+}
+.icon { flex: none; filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.6)); }
+.text { flex: 1; min-width: 0; }
+h1 { margin: 0; font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; }
+p { margin: 0; color: var(--text-2); line-height: 1.35; }
+.marks { display: flex; align-items: center; }
+.marks img { border-radius: 22%; box-shadow: 0 2px 6px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.08); background: #fff; }
+.marks span { color: var(--text-3); font-weight: 500; letter-spacing: 0.01em; }
+.chip { display: inline-flex; align-items: center; gap: .4em; color: var(--text-2); border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04); border-radius: 999px; }
+.kbd { font-family: ui-monospace, "SF Mono", Menlo, monospace; color: var(--text); background: #1c2130; border: 1px solid rgba(255,255,255,.14); border-bottom-width: 2px; border-radius: .4em; padding: 0 .45em; }

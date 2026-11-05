@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Console Dark Mode</title>
+  <meta name="description" content="Privacy policy for the Console Dark Mode Chrome extension: no data is collected, stored remotely or transmitted.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0d1017">
+  <meta name="robots" content="index,follow">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/icon-128.png" sizes="128x128" type="image/png">
+  <link rel="canonical" href="https://salar-dev.github.io/console-dark-mode/privacy.html">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav__inner">
+    <a class="brand" href="./" aria-label="Console Dark Mode, home">
+      <img src="assets/icon.svg" width="32" height="32" alt="">
+      <span>Console Dark Mode</span>
+    </a>
+    <div class="nav__actions">
+      <a class="btn btn--ghost btn--sm" href="https://github.com/salar-dev/console-dark-mode" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<main class="doc">
+  <div class="container">
+    <a class="back" href="./">Back to the overview</a>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Dark Mode for Play Console &amp; App Store Connect · Last updated 6 November 2026</p>
+
+    <p>This extension does <strong>not</strong> collect, store, transmit or sell any personal data.</p>
+
+    <h2>What the extension does</h2>
+    <p>It applies a dark colour theme to two websites only:</p>
+    <ul>
+      <li><code>https://play.google.com/console/*</code> (Google Play Console)</li>
+      <li><code>https://appstoreconnect.apple.com/*</code> (App Store Connect)</li>
+    </ul>
+    <p>The extension reads the pages' <em>stylesheets</em> (colours declared in CSS) in order to generate a dark counterpart. It does not read page content, form fields, app data, account information or anything else from those pages, and nothing is sent anywhere.</p>
+
+    <h2>Data stored</h2>
+    <p>Your preferences (master switch, per-console switches, "follow system appearance") are stored with <code>chrome.storage.sync</code>. This data stays within your browser profile and, if you are signed in to Chrome with sync enabled, is synchronised by Google between your own devices. It never reaches the developer of this extension.</p>
+
+    <h2>Permissions</h2>
+    <table>
+      <thead><tr><th>Permission</th><th>Why it is needed</th></tr></thead>
+      <tbody>
+        <tr><td><code>storage</code></td><td>Remember your toggles.</td></tr>
+        <tr><td>Host access to the two sites above</td><td>Required by Chrome to inject the theme stylesheet and the small scripts that turn it on and off and keep it in sync with the page's own styling.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Credit link</h2>
+    <p>While the theme is active, a small "Dark Mode By: Salar Dev" link is added to the site footer. It is a plain link to the developer's GitHub profile; it loads nothing and reports nothing.</p>
+
+    <h2>Network</h2>
+    <p>The extension makes no network requests of its own. There are no analytics, no remote configuration and no third-party scripts.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If the extension's behaviour ever changes in a way that affects your data, this page and the Chrome Web Store listing will be updated before the new version is published.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about this policy: <a href="mailto:developer.salar@gmail.com">developer.salar@gmail.com</a></p>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <p>© 2026 <a href="https://github.com/salar-dev" target="_blank" rel="noopener">Salar Dev</a> · MIT License</p>
+    <nav aria-label="Footer">
+      <a href="./">Overview</a>
+      <a href="https://github.com/salar-dev/console-dark-mode" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+    <p class="footer__legal">Google Play and the Google Play logo are trademarks of Google LLC. App Store Connect is a trademark of Apple Inc. This project is not affiliated with or endorsed by Google or Apple.</p>
+  </div>
+</footer>
+
+</body>
+</html>

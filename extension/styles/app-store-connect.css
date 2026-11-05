@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Dark theme — App Store Connect (appstoreconnect.apple.com)
+
+   Scoped to html[data-store-dark="appstoreconnect"], added by the content
+   script together with Apple's own `dark` class (which switches the tb-*
+   component library to its dark palette). The dynamic engine recolours the
+   styled-components / CSS-modules layer. This file handles the canvas, the
+   logo mask, scrollbars and polish.
+   ========================================================================== */
+
+html[data-store-dark="appstoreconnect"] {
+  color-scheme: dark;
+
+  --sd-bg:        #1e1e1e;   /* Apple's html.dark background */
+  --sd-surface:   #252525;
+  --sd-surface-2: #2b2b2b;
+  --sd-surface-3: #333333;
+  --sd-border:    #3f3f3f;
+  --sd-text:      #f5f5f7;
+  --sd-text-2:    #dddddd;
+  --sd-text-3:    #9a9a9f;
+  --sd-link:      #3897fe;
+  --sd-error:     #ff453a;
+}
+
+/* ---- Canvas ------------------------------------------------------------ */
+html[data-store-dark="appstoreconnect"],
+html[data-store-dark="appstoreconnect"] body {
+  background-color: var(--sd-bg) !important;
+  color: var(--sd-text);
+}
+
+/* The Apple logo is a black mask image; Apple's own dark variant uses #ddd. */
+html[data-store-dark="appstoreconnect"] #logo {
+  background-color: var(--sd-text-2) !important;
+}
+
+/* Generic hairlines that are plain <hr> without classes */
+html[data-store-dark="appstoreconnect"] hr {
+  border-color: var(--sd-border);
+}
+
+/* ---- Credit link in the footer ------------------------------------------ */
+html[data-store-dark="appstoreconnect"] [data-store-dark-badge] {
+  white-space: nowrap;
+}
+
+/* ---- Scrollbars -------------------------------------------------------- */
+html[data-store-dark="appstoreconnect"] ::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+html[data-store-dark="appstoreconnect"] ::-webkit-scrollbar-track {
+  background: transparent;
+}
+html[data-store-dark="appstoreconnect"] ::-webkit-scrollbar-thumb {
+  background-color: #4a4a4e;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  border-radius: 8px;
+}
+html[data-store-dark="appstoreconnect"] ::-webkit-scrollbar-thumb:hover {
+  background-color: #636366;
+}
+
+/* ---- Selection ---------------------------------------------------------- */
+html[data-store-dark="appstoreconnect"] ::selection {
+  background-color: rgba(56, 151, 254, 0.35);
+}
+
+/* ---- Media stays untouched --------------------------------------------- */
+html[data-store-dark="appstoreconnect"] img,
+html[data-store-dark="appstoreconnect"] video,
+html[data-store-dark="appstoreconnect"] canvas {
+  color-scheme: light;
+}
