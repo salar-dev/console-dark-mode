@@ -4,6 +4,8 @@ A Chrome extension (Manifest V3) that gives **Google Play Console** and
 **App Store Connect** a carefully crafted dark theme. It is scoped to those two
 developer dashboards only and never touches any other website.
 
+**Install:** [Chrome Web Store](https://chromewebstore.google.com/detail/dark-mode-for-play-consol/onhgocpclfamcmeemabpammbldjncaae) · [Website](https://salar-dev.github.io/console-dark-mode/)
+
 | | |
 |---|---|
 | Sites | `https://play.google.com/console/*` · `https://appstoreconnect.apple.com/*` |
@@ -82,8 +84,8 @@ published with GitHub Pages: *Settings → Pages → Deploy from a branch → `m
 `/docs`*. It lives at <https://salar-dev.github.io/console-dark-mode/> and hosts the
 privacy policy the store listing links to.
 
-Once the Chrome Web Store listing is live, put its URL in the `data-store-url`
-attribute on `<html>` in `docs/index.html`; every "Add to Chrome" button picks it up.
+The Chrome Web Store URL lives in the `data-store-url` attribute on `<html>` in
+`docs/index.html` and on every "Add to Chrome" button; change it there if the listing moves.
 Screenshots are the WebP copies in `docs/assets/` (regenerate from `assets/store/screenshots/`).
 
 ## How the theme is built

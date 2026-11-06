@@ -2,7 +2,7 @@
 
 Everything the Developer Dashboard asks for, in the order of its tabs.
 Repository: https://github.com/salar-dev/console-dark-mode · Website: https://salar-dev.github.io/console-dark-mode/
-Chrome Web Store item ID: `onhgocpclfamcmeemabpammbldjncaae` → https://chromewebstore.google.com/detail/onhgocpclfamcmeemabpammbldjncaae (404 until the first review is approved)
+Chrome Web Store listing (approved 6 November 2026): https://chromewebstore.google.com/detail/dark-mode-for-play-consol/onhgocpclfamcmeemabpammbldjncaae
 
 ## Package
 
@@ -98,7 +98,6 @@ Certify all three statements (no selling of data, no use for unrelated purposes,
 2. Enable GitHub Pages: *Settings → Pages → Deploy from a branch → `main` / `/docs`*.
    The site appears at https://salar-dev.github.io/console-dark-mode/ within a minute or two; the privacy policy is
    `https://salar-dev.github.io/console-dark-mode/privacy.html`.
-3. After the Chrome Web Store listing is live, paste
-   `https://chromewebstore.google.com/detail/onhgocpclfamcmeemabpammbldjncaae` into the
-   `data-store-url` attribute on `<html>` in `docs/index.html` and push; the
-   "Add to Chrome" buttons start pointing at the store.
+3. The Chrome Web Store URL is set in the `data-store-url` attribute on `<html>` in
+   `docs/index.html` and on every "Add to Chrome" button; change it there if the
+   listing ever moves.
