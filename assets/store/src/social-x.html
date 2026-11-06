@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>social: X post image 1600x900</title>
+<link rel="stylesheet" href="promo.css">
+<style>
+  html, body { width: 1600px; height: 900px; }
+  .tile { width: 1600px; height: 900px; padding: 0 0 0 96px; gap: 0; }
+  .tile::before { background:
+    radial-gradient(40% 60% at 70% 45%, rgba(59, 130, 246, 0.26), transparent 70%),
+    radial-gradient(26% 40% at 12% 18%, rgba(246, 221, 157, 0.09), transparent 70%); }
+  .tile::after { -webkit-mask-image: radial-gradient(60% 80% at 65% 50%, #000, transparent); }
+
+  .text { flex: none; width: 560px; position: relative; z-index: 2; }
+  .eyebrow { display: flex; align-items: center; gap: 12px; color: var(--accent-2); font-size: 17px; font-weight: 650; letter-spacing: 0.12em; text-transform: uppercase; }
+  .eyebrow img { width: 36px; height: 36px; border-radius: 9px; box-shadow: 0 4px 12px rgba(0,0,0,.5); }
+  h1 { font-size: 62px; margin-top: 22px; max-width: 540px; }
+  p.lead { margin-top: 18px; font-size: 22px; max-width: 500px; }
+  .marks { margin-top: 34px; gap: 14px; }
+  .marks img { width: 46px; height: 46px; }
+  .marks span { font-size: 19px; margin-left: 4px; }
+  .free { margin-top: 30px; display: flex; align-items: center; gap: 12px; font-size: 20px; font-weight: 600; color: var(--text); }
+  .free i { width: 10px; height: 10px; border-radius: 50%; background: #34d399; box-shadow: 0 0 10px rgba(52,211,153,.8); }
+  .free small { color: var(--text-3); font-weight: 500; }
+
+  /* Browser window, bleeding off the right edge */
+  .frame { position: absolute; left: 724px; top: 112px; width: 1000px; height: 669px; border-radius: 16px; overflow: hidden;
+           background: #0f131c; box-shadow: 0 50px 120px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.1); }
+  .bar { height: 44px; display: flex; align-items: center; gap: 8px; padding: 0 16px; background: #1a1f2b; border-bottom: 1px solid rgba(255,255,255,.06); }
+  .bar b { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .url { margin-left: 14px; height: 28px; width: 420px; border-radius: 8px; background: #0f131c; display: flex; align-items: center; gap: 8px; padding: 0 12px; color: var(--text-2); font-size: 14px; }
+  .url svg { width: 12px; height: 12px; color: var(--text-3); }
+  .stage { position: relative; width: 1000px; height: 625px; overflow: hidden; }
+  .shot { position: absolute; inset: 0; width: 1000px; height: 625px; object-fit: cover; object-position: top left; }
+  .shot.dark { clip-path: polygon(0 0, 52% 0, 62% 100%, 0 100%); }
+  .seam { position: absolute; inset: 0; width: 1000px; height: 625px; pointer-events: none; }
+  .label { position: absolute; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px;
+           font-size: 14px; font-weight: 650; letter-spacing: .04em; text-transform: uppercase; box-shadow: 0 6px 20px rgba(0,0,0,.35); }
+  .label.after { left: 378px; top: 56px; background: #151925; color: #eef1f7; border: 1px solid rgba(255,255,255,.14); }
+  .label.before { left: 690px; top: 56px; background: #fff; color: #202124; border: 1px solid rgba(0,0,0,.12); }
+  .label i { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+  .label.after i { background: #34d399; box-shadow: 0 0 8px rgba(52,211,153,.7); }
+  .label.before i { background: #fbbc04; }
+
+  /* The popup, floating over the window's lower-left corner */
+  .popup { position: absolute; left: 1296px; top: 548px; width: 272px; height: 324px; border-radius: 14px; z-index: 3;
+           box-shadow: 0 34px 80px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.12), 0 0 90px rgba(59,130,246,.2); }
+</style></head>
+<body>
+<div class="tile">
+  <div class="text">
+    <div class="eyebrow"><img src="../../icon/extension-icon.svg" alt="">Console Dark Mode</div>
+    <h1>Your developer consoles, finally dark.</h1>
+    <p class="lead">A real dark theme for Google Play Console and App Store Connect. One switch per console, no white flash, nothing else touched.</p>
+    <div class="marks">
+      <img src="../../../extension/popup/brand/play-console.svg" alt="">
+      <img src="../../../extension/popup/brand/app-store-connect.svg" alt="">
+      <span>Play Console · App Store Connect</span>
+    </div>
+    <div class="free"><i></i>Free on the Chrome Web Store <small>· open source</small></div>
+  </div>
+
+  <div class="frame">
+    <div class="bar">
+      <b style="background:#ff5f57"></b><b style="background:#febc2e"></b><b style="background:#28c840"></b>
+      <div class="url"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 9V7a5 5 0 0 0-10 0v2H5v13h14V9h-2zm-8-2a3 3 0 0 1 6 0v2H9V7z"/></svg>play.google.com/console</div>
+    </div>
+    <div class="stage">
+      <img class="shot light" src="home-light@2x.png" alt="">
+      <img class="shot dark" src="home-dark@2x.png" alt="">
+      <svg class="seam" viewBox="0 0 1000 625" xmlns="http://www.w3.org/2000/svg">
+        <line x1="520" y1="0" x2="620" y2="625" stroke="rgba(0,0,0,0.35)" stroke-width="12"/>
+        <line x1="520" y1="0" x2="620" y2="625" stroke="#ffffff" stroke-width="4"/>
+      </svg>
+      <span class="label after"><i></i>After</span>
+      <span class="label before"><i></i>Before</span>
+    </div>
+  </div>
+  <img class="popup" src="popup@3x.png" alt="">
+</div>
+</body></html>
